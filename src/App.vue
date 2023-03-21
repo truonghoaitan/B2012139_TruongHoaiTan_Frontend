@@ -1,11 +1,24 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import HelloWorld from './components/HelloWorld.vue';
+import TheWelcome from './components/TheWelcome.vue';
+import AppHeader from "@/components/AppHeader.vue";
+
+export default {
+  components: {
+    AppHeader,
+  },
+};
 </script>
 
 <template>
-  <header>
+  <div id="app">
+    <AppHeader />
 
+    <div class="container mt-3">
+      <router-view />
+    </div>
+  </div>
+  <header>
     <h1>Hello, Vue.js!</h1>
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
@@ -25,8 +38,8 @@ header {
 }
 
 .page {
-max-width: 400px;
-margin: auto;
+  max-width: 400px;
+  margin: auto;
 }
 
 .logo {
